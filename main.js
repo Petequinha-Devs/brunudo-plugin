@@ -6,6 +6,7 @@ function displayImage() {
   img.src = "https://drive.google.com/uc?export=view&id=1Vs1n7syPldk3sPsIH58LSk5Duci9E4yV";
   img.style.position = "fixed";
   img.style.width = "150px";
+  img.style.zIndex = "9999";
 
   let ramdomCorner = Math.floor(Math.random()*4)
 
