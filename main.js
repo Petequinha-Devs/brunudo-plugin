@@ -18,6 +18,7 @@ function displayImage() {
     case 1:
       img.style.bottom = "0px";
       img.style.right = "0px";
+      break;
     case 2:
       img.style.top = "0px";
       img.style.left = "0px";
