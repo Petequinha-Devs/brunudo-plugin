@@ -1,9 +1,12 @@
-var searchTerm = "cookie";
+var searchTerm1 = "cookie";
+var searchTerm2 = "chuva";
 
-function displayImage() {
+function displayImage(imageType) {
   var img = document.createElement("img");
-
-  img.src = "https://drive.google.com/uc?export=view&id=1Vs1n7syPldk3sPsIH58LSk5Duci9E4yV";
+  var cookieImg = "https://drive.google.com/uc?export=view&id=1Vs1n7syPldk3sPsIH58LSk5Duci9E4yV";
+  var rainImg = "https://drive.google.com/uc?export=view&id=1j2fmjw04aSd7SY2UZ1d8qaJyVWcHnlpN";
+ 
+  img.src = imageType === "cookie" ? cookieImg : rainImg;
   img.style.position = "fixed";
   img.style.width = "150px";
   img.style.zIndex = "2147483641"; // 2147483640 = max zIndex
@@ -37,10 +40,12 @@ function displayImage() {
   }, 6500);
 }
 
-if (document.body.innerText.includes(searchTerm)) {
-  console.log(searchTerm + " found!")
-  displayImage();
-}
-else {
-  console.log(searchTerm + " not found!")
+if (document.body.innerText.includes(searchTerm1)) {
+  console.log(searchTerm1 + " found!");
+  displayImage("cookie");
+} else if (document.body.innerText.includes(searchTerm2)) {
+  console.log(searchTerm2 + " found!");
+  displayImage("chuva");
+} else {
+  console.log("Neither " + searchTerm1 + " nor " + searchTerm2 + " found!");
 }
